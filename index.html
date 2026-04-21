@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>立山黑部6日｜手繪旅行筆記V4.3</title>
+<title>立山黑部6日｜手繪旅行筆記V4.4</title>
 
 <style>
 /* =========================
@@ -86,7 +86,6 @@ nav button.active {
   font-weight: bold;
 }
 
-/* 🍴 飲食樣式 */
 .meal-box {
   background: #f0f9eb;
   border: 1px solid #c2e7b0;
@@ -116,6 +115,8 @@ nav button.active {
 .ticket-dest span { font-size: 10px; color: #777; }
 
 .hotel-info { background: #fdf6e3; border: 1px solid #d4a373; padding: 10px; font-size: 12px; border-radius: 5px; margin-top: 10px;}
+.map-link { display: inline-block; margin-top: 5px; color: #3498db; text-decoration: none; font-weight: bold; font-size: 11px; }
+
 .timeline { border-left: 2px dashed #888; padding-left: 15px; margin-left: 10px; }
 .item { margin-bottom: 10px; font-size: 14px; position: relative; }
 .item::before { content: "✏️"; position: absolute; left: -25px; }
@@ -155,7 +156,7 @@ nav button.active {
   <div id="info" class="page active">
     <div class="card">
       <div class="sticker">集合資訊</div>
-      <div class="item"><b>集合：</b>115年5月1日 07:45 AM</div>
+      <div class="item"><b>時間：</b>115年5月1日 07:45 AM</div>
       <div class="item"><b>地點：</b>桃園機場一航 星宇 6號櫃台</div>
       <div class="item"><b>導遊：</b>吳淑華 0916-850180</div>
     </div>
@@ -163,19 +164,19 @@ nav button.active {
     <div class="card">
       <div class="sticker">電子機票</div>
       <div class="ticket">
-        <div class="ticket-top"><span>JX822 (去)</span><span>2026/05/01</span></div>
+        <div class="ticket-top"><span>JX822 (去程)</span><span>2026/05/01</span></div>
         <div class="ticket-mid">
-          <div class="ticket-dest"><big>TPE</big><span>10:15</span></div>
+          <div class="ticket-dest"><big>TPE</big><span>10:15 桃園</span></div>
           <div style="font-size:20px">✈️</div>
-          <div class="ticket-dest"><big>KIX</big><span>14:00</span></div>
+          <div class="ticket-dest"><big>KIX</big><span>14:00 大阪</span></div>
         </div>
       </div>
       <div class="ticket">
-        <div class="ticket-top"><span>JX821 (回)</span><span>2026/05/06</span></div>
+        <div class="ticket-top"><span>JX821 (回程)</span><span>2026/05/06</span></div>
         <div class="ticket-mid">
-          <div class="ticket-dest"><big>KIX</big><span>13:25</span></div>
+          <div class="ticket-dest"><big>KIX</big><span>13:25 大阪</span></div>
           <div style="font-size:20px">✈️</div>
-          <div class="ticket-dest"><big>TPE</big><span>15:20</span></div>
+          <div class="ticket-dest"><big>TPE</big><span>15:20 桃園</span></div>
         </div>
       </div>
     </div>
@@ -185,15 +186,17 @@ nav button.active {
     <div class="card">
       <span class="title">Day 1：台北 ➔ 關西空港 ➔ 京都</span>
       <div class="timeline">
-        <div class="item"><b>伏見稻荷大社：</b>全日本稻荷神社總本山。</div>
-        <div class="item"><b>千本鳥居：</b>朱紅色的長廊隧道。</div>
+        <div class="item"><b>伏見稻荷大社：</b>全日本稻荷神社總本山，以千本鳥居聞名。</div>
       </div>
       <div class="meal-box">
         <div class="meal-item"><span class="meal-label">早</span>機上精緻簡餐</div>
         <div class="meal-item"><span class="meal-label">午</span>方便遊玩自理</div>
         <div class="meal-item"><span class="meal-label">晚</span>京風和善料理 或 涮涮鍋</div>
       </div>
-      <div class="hotel-info">🏨 La’gent 京都二條飯店 (075-823-6655)</div>
+      <div class="hotel-info">
+        🏨 La’gent 京都二條飯店 (075-823-6655)<br>
+        <a href="https://www.google.com/maps/search/?api=1&query=La%27gent+Hotel+Kyoto+Nijo" target="_blank" class="map-link">📍 查看 Google Maps 地圖</a>
+      </div>
     </div>
   </div>
 
@@ -201,32 +204,38 @@ nav button.active {
     <div class="card">
       <span class="title">Day 2：舊竹林院 ➔ 東尋坊 ➔ 兼六園</span>
       <div class="timeline">
-        <div class="item"><b>舊竹林院：</b>名勝庭園、僧侶修行別邸。</div>
-        <div class="item"><b>東尋坊：</b>世界三大斷崖奇岩、柱狀節理。</div>
-        <div class="item"><b>兼六園：</b>日本三大名園之首，冬季雪吊景觀。</div>
+        <div class="item"><b>舊竹林院：</b>僧侶修行別邸，名勝庭園。</div>
+        <div class="item"><b>東尋坊：</b>世界級奇岩，輝石安山岩柱狀節理。</div>
+        <div class="item"><b>兼六園：</b>日本三大名園，宏大、幽邃、人力、蒼古、水泉、眺望。</div>
       </div>
       <div class="meal-box">
         <div class="meal-item"><span class="meal-label">早</span>飯店內自助餐</div>
         <div class="meal-item"><span class="meal-label">午</span>越前風味海鮮定食</div>
         <div class="meal-item"><span class="meal-label">晚</span>金澤旬魚料理 或 燒肉</div>
       </div>
-      <div class="hotel-info">🏨 MYSTAYS 金澤片町飯店 (076-263-0011)</div>
+      <div class="hotel-info">
+        🏨 MYSTAYS 金澤片町飯店 (076-263-0011)<br>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+MYSTAYS+Kanazawa+Katamachi" target="_blank" class="map-link">📍 查看 Google Maps 地圖</a>
+      </div>
     </div>
   </div>
 
   <div id="d3" class="page">
     <div class="card">
       <span class="title">Day 3：立山黑部橫斷 (雪之大谷)</span>
-      <div class="sticker">橫斷 6 大工具</div>
+      <div class="sticker">橫斷 6 大交通體驗</div>
       <div class="transport-list">
-        纜車、高原巴士、電氣巴士、空中纜車、地下電車、電氣巴士。
+        登山纜車、高原巴士、無軌巴士、空中纜車、地下電車、電氣巴士。
       </div>
       <div class="meal-box">
         <div class="meal-item"><span class="meal-label">早</span>飯店內自助餐</div>
         <div class="meal-item"><span class="meal-label">午</span>立山雲上便當 (九宮格風格)</div>
         <div class="meal-item"><span class="meal-label">晚</span>信州飯店內懷石料理</div>
       </div>
-      <div class="hotel-info">🏨 白馬丸金旅館 (+81 261-72-2114)</div>
+      <div class="hotel-info">
+        🏨 白馬丸金旅館 (+81 261-72-2114)<br>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Marukane+Hakuba" target="_blank" class="map-link">📍 查看 Google Maps 地圖</a>
+      </div>
     </div>
   </div>
 
@@ -234,16 +243,19 @@ nav button.active {
     <div class="card">
       <span class="title">Day 4：上高地 ➔ 高山 ➔ 合掌村</span>
       <div class="timeline">
-        <div class="item"><b>上高地：</b>神之故鄉散策、河童橋。</div>
-        <div class="item"><b>飛驒高山：</b>古街散策、上三之町。</div>
-        <div class="item"><b>合掌村：</b>白川鄉世界遺產。</div>
+        <div class="item"><b>上高地：</b>神降地之稱。大正池、河童橋散策。</div>
+        <div class="item"><b>飛驒高山：</b>江戶時代風情，上三之町古街。</div>
+        <div class="item"><b>合掌村：</b>世界遺產。白川鄉獨特的合掌造屋頂。</div>
       </div>
       <div class="meal-box">
         <div class="meal-item"><span class="meal-label">早</span>飯店內自助餐</div>
         <div class="meal-item"><span class="meal-label">午</span>飛驒朴葉味噌牛肉料理</div>
         <div class="meal-item"><span class="meal-label">晚</span>和食風味餐 或 合掌造特色餐</div>
       </div>
-      <div class="hotel-info">🏨 吳竹莊高山站前飯店 (0577-33-7111)</div>
+      <div class="hotel-info">
+        🏨 吳竹莊高山站前飯店 (0577-33-7111)<br>
+        <a href="https://www.google.com/maps/search/?api=1&query=Kuretake+Inn+Premium+Takayama+Ekimae" target="_blank" class="map-link">📍 查看 Google Maps 地圖</a>
+      </div>
     </div>
   </div>
 
@@ -251,24 +263,27 @@ nav button.active {
     <div class="card">
       <span class="title">Day 5：郡上八幡 ➔ 宇治平等院 ➔ 大阪</span>
       <div class="timeline">
-        <div class="item"><b>郡上八幡：</b>名水之城，★含贈品三品。</div>
-        <div class="item"><b>平等院：</b>鳳凰堂紫藤花美景。</div>
+        <div class="item"><b>郡上八幡：</b>名水之鄉，贈送邊走邊吃三品。</div>
+        <div class="item"><b>宇治平等院：</b>鳳凰堂，紫藤花瀑布景觀。</div>
       </div>
       <div class="meal-box">
         <div class="meal-item"><span class="meal-label">早</span>飯店內自助餐</div>
         <div class="meal-item"><span class="meal-label">午</span>宇治風味餐 或 京都和膳</div>
-        <div class="meal-item"><span class="meal-label">晚</span>★加碼螃蟹吃到飽 + 涮涮鍋</div>
+        <div class="meal-item"><span class="meal-label">晚</span>螃蟹吃到飽 + 涮涮鍋</div>
       </div>
-      <div class="hotel-info">🏨 心齋橋格蘭多飯店 (06-6213-5800)</div>
+      <div class="hotel-info">
+        🏨 心齋橋格蘭多飯店 (06-6213-5800)<br>
+        <a href="https://www.google.com/maps/search/?api=1&query=Shinsaibashi+Grand+Hotel+Osaka" target="_blank" class="map-link">📍 查看 Google Maps 地圖</a>
+      </div>
     </div>
   </div>
 
   <div id="d6" class="page">
     <div class="card">
-      <span class="title">Day 6：大阪自由行 ➔ 桃園</span>
+      <span class="title">Day 6：大阪商圈 ➔ 桃園</span>
       <div class="timeline">
-        <div class="item"><b>自由活動：</b>最後採買、道頓堀。</div>
-        <div class="item"><b>歸途：</b>前往關西空港。</div>
+        <div class="item"><b>自由活動：</b>道頓堀、心齋橋最後購物。</div>
+        <div class="item"><b>歸途：</b>前往機場搭乘星宇航空返台。</div>
       </div>
       <div class="meal-box">
         <div class="meal-item"><span class="meal-label">早</span>飯店內自助餐</div>
@@ -286,12 +301,13 @@ nav button.active {
         <div class="sticker">必備物品</div>
         <label class="check"><input type="checkbox"> 護照 (效期6個月)</label>
         <label class="check"><input type="checkbox"> 日幣現金 / 信用卡</label>
-        <label class="check"><input type="checkbox"> 行動電源 (不托運)</label>
+        <label class="check"><input type="checkbox"> 行動電源 (不可托運)</label>
       </div>
       <div class="card">
-        <div class="sticker">衣物準備</div>
+        <div class="sticker">立山特別準備</div>
         <label class="check"><input type="checkbox"> 太陽眼鏡 (防雪盲)</label>
-        <label class="check"><input type="checkbox"> 保暖外套 / 毛帽 / 手套</label>
+        <label class="check"><input type="checkbox"> 防風保暖外套/毛帽</label>
+        <label class="check"><input type="checkbox"> 止滑走山鞋</label>
       </div>
     </div>
   </div>
