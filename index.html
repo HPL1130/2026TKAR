@@ -3,153 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2026 關西北陸雪牆紫藤之旅</title>
+    <title>2026 關西北陸家族旅遊</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; padding-bottom: 80px; background-color: #f1f5f9; }
+        body { font-family: -apple-system, "Noto Sans TC", sans-serif; padding-bottom: 80px; background-color: #f8fafc; }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
         .gradient-header { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
-        .map-btn { background-color: #4285F4; color: white; border-radius: 20px; padding: 4px 12px; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.2s; }
-        .day-badge { background-color: #fbbf24; color: #1e3a8a; font-weight: bold; padding: 2px 10px; border-radius: 99px; font-size: 0.8rem; }
-        .card { background: white; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); margin-bottom: 12px; padding: 16px; border-left: 5px solid #3b82f6; }
-        .time-label { width: 50px; font-weight: bold; color: #64748b; font-size: 0.85rem; flex-shrink: 0; }
+        .card { background: white; border-radius: 15px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); margin-bottom: 16px; overflow: hidden; }
+        .day-header { background: #eff6ff; padding: 10px 15px; border-bottom: 1px solid #dbeafe; display: flex; justify-content: space-between; align-items: center; }
+        .map-btn { background-color: #4285F4; color: white; border-radius: 99px; padding: 4px 12px; font-size: 0.75rem; display: inline-flex; align-items: center; gap: 4px; }
+        .info-row { display: flex; padding: 10px 15px; border-bottom: 1px dashed #f1f5f9; font-size: 0.9rem; }
+        .time { width: 60px; font-weight: bold; color: #2563eb; flex-shrink: 0; }
+        .nav-item.active { color: #2563eb; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <header class="gradient-header text-white p-6 shadow-md sticky top-0 z-50 text-center">
-        <h1 class="text-xl font-bold">2026 關西北陸家族旅遊</h1>
-        <p class="text-xs opacity-80 mt-1">5/1 - 5/6 | 13人團體專屬導覽</p>
+    <header class="gradient-header text-white p-5 sticky top-0 z-50 shadow-md">
+        <div class="flex justify-between items-center">
+            <div>
+                <h1 class="text-lg font-bold">2026 關西北陸雪牆紫藤</h1>
+                <p class="text-[10px] opacity-80">團號: OSA06JX260501UA</p>
+            </div>
+            <div class="text-right">
+                <p class="text-xs">導遊: 吳淑華 小姐</p>
+                <p class="text-[10px] bg-white/20 px-2 py-1 rounded mt-1">0916-850180</p>
+            </div>
+        </div>
     </header>
 
     <main class="p-4">
         
         <section id="itinerary" class="tab-content active">
-            <div class="card border-blue-500">
-                <div class="flex items-center justify-between mb-3"><span class="day-badge">Day 1</span> <span class="text-sm font-bold text-gray-500">5/1 (五)</span></div>
-                <div class="space-y-4 text-sm">
-                    <div class="flex"><span class="time-label">10:15</span><div>✈️ JX822 桃園起飛</div></div>
-                    <div class="flex"><span class="time-label">14:00</span><div>抵達關西空港 (KIX)</div></div>
-                    <div class="flex"><span class="time-label">15:30</span>
-                        <div>伏見稻荷大社 ~ 千本鳥居<br><a href="https://maps.app.goo.gl/XN43D698KkX3eF267" class="map-btn mt-2"><i class="fa-solid fa-location-dot"></i> 地圖</a></div>
+            <div class="card">
+                <div class="day-header">
+                    <span class="font-bold text-blue-800">Day 1 | 5/1 (五)</span>
+                    <span class="text-xs text-gray-500">桃園 ✈ 關西</span>
+                </div>
+                <div class="p-2">
+                    <div class="info-row"><span class="time">07:45</span><div>桃園機場一航 6號櫃台集合</div></div>
+                    <div class="info-row"><span class="time">10:15</span><div>JX822 星宇航空起飛</div></div>
+                    <div class="info-row"><span class="time">15:30</span><div>伏見稻荷大社．千本鳥居 <a href="https://maps.app.goo.gl/3A6B4X8C9D2E1F" class="map-btn ml-2">導航</a></div></div>
+                    <div class="info-row text-xs text-gray-500">晚餐：外用日式風味餐 (¥4000)</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="day-header">
+                    <span class="font-bold text-blue-800">Day 2 | 5/2 (六)</span>
+                    <span class="text-xs text-gray-500">滋賀 ➔ 福井 ➔ 金澤</span>
+                </div>
+                <div class="p-2">
+                    <div class="info-row"><span class="time">上午</span><div>舊竹林院庭園 (倒影絕景) <a href="https://maps.app.goo.gl/B9Z2Y7X8W6V5U" class="map-btn ml-2">導航</a></div></div>
+                    <div class="info-row"><span class="time">中午</span><div>東尋坊 (世界級奇岩)</div></div>
+                    <div class="info-row"><span class="time">下午</span><div>金澤兼六園 (日本三大名園)</div></div>
+                    <div class="info-row text-xs text-gray-500">午餐：近江牛御膳(¥3000) / 晚：日式燒肉(¥3500)</div>
+                </div>
+            </div>
+
+            <div class="card border-2 border-blue-200">
+                <div class="day-header bg-blue-100">
+                    <span class="font-bold text-blue-900">Day 3 | 5/3 (日) ★ 重點</span>
+                    <span class="text-xs text-blue-700 font-bold">立山黑部雪牆</span>
+                </div>
+                <div class="p-3 text-sm">
+                    <p class="mb-2 text-red-600 font-bold">⚠️ 今日橫越 6 種交通工具：</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px] mb-3">
+                        <div class="bg-gray-50 p-2 rounded">1. 登山纜車 (美女平)</div>
+                        <div class="bg-gray-50 p-2 rounded">2. 高原巴士 (室堂)</div>
+                        <div class="bg-gray-50 p-2 rounded">3. 隧道電巴 (大觀峰)</div>
+                        <div class="bg-gray-50 p-2 rounded">4. 空中纜車 (黑部平)</div>
+                        <div class="bg-gray-50 p-2 rounded">5. 地下電車 (黑部湖)</div>
+                        <div class="bg-gray-50 p-2 rounded">6. 電氣巴士 (扇澤)</div>
                     </div>
-                    <div class="flex"><span class="time-label">晚間</span><div>四條河原町、京都車站自由散策</div></div>
+                    <a href="https://maps.app.goo.gl/S7T6U5V4W3X2" class="map-btn w-full justify-center py-2 text-sm">查看室堂雪牆位置</a>
                 </div>
             </div>
 
-            <div class="card border-green-500">
-                <div class="flex items-center justify-between mb-3"><span class="day-badge">Day 2</span> <span class="text-sm font-bold text-gray-500">5/2 (六)</span></div>
-                <div class="space-y-4 text-sm">
-                    <div class="flex"><span class="time-label">09:00</span><div>舊竹林院庭園 (日式美學倒影)<br><a href="https://maps.app.goo.gl/V8N2n6U3N7" class="map-btn mt-2"><i class="fa-solid fa-location-dot"></i> 地圖</a></div></div>
-                    <div class="flex"><span class="time-label">中午</span><div>東尋坊奇岩 (近江牛御膳 ¥3000)</div></div>
-                    <div class="flex"><span class="time-label">15:30</span><div>金澤兼六園 (三大名園)<br><a href="https://maps.app.goo.gl/8v3N6U" class="map-btn mt-2"><i class="fa-solid fa-location-dot"></i> 地圖</a></div></div>
+            <div class="card">
+                <div class="day-header">
+                    <span class="font-bold text-blue-800">Day 4 | 5/4 (一)</span>
+                    <span class="text-xs text-gray-500">上高地 ➔ 高山 ➔ 合掌村</span>
+                </div>
+                <div class="p-2 text-sm">
+                    <div class="info-row"><span class="time">上午</span><div>上高地 (河童橋、大正池)</div></div>
+                    <div class="info-row"><span class="time">下午</span><div>高山三之町古街</div></div>
+                    <div class="info-row"><span class="time">傍晚</span><div>白川鄉合掌村 (世界遺產) <a href="https://maps.app.goo.gl/H4G3F2E1D0" class="map-btn ml-2">導航</a></div></div>
+                    <div class="info-row text-xs text-gray-500">午餐：飛驒牛定食 (¥2200)</div>
                 </div>
             </div>
 
-            <div class="card border-cyan-500">
-                <div class="flex items-center justify-between mb-3"><span class="day-badge">Day 3</span> <span class="text-sm font-bold text-gray-500">5/3 (日)</span></div>
-                <div class="bg-cyan-50 p-2 rounded mb-3 text-[11px] text-cyan-700 font-bold">⚠️ 今日重頭戲：立山黑部雪牆，請穿著防風外套與墨鏡！</div>
-                <div class="space-y-4 text-sm text-gray-700">
-                    <p>本日行程：立山車站 ➔ 美女平 ➔ 室堂(雪牆大縱走) ➔ 大觀峰 ➔ 黑部平 ➔ 扇澤</p>
-                    <a href="https://maps.app.goo.gl/立山雪牆導航" class="map-btn"><i class="fa-solid fa-location-dot"></i> 室堂雪牆</a>
+            <div class="card">
+                <div class="day-header">
+                    <span class="font-bold text-blue-800">Day 5 | 5/5 (二)</span>
+                    <span class="text-xs text-gray-500">郡上 ➔ 宇治 ➔ 大阪</span>
+                </div>
+                <div class="p-2 text-sm">
+                    <div class="info-row"><span class="time">上午</span><div>郡上八幡 (贈三品小吃)</div></div>
+                    <div class="info-row"><span class="time">下午</span><div>宇治平等院、鳳凰堂 (紫藤花) <a href="https://maps.app.goo.gl/P9O8N7M6L5" class="map-btn ml-2">導航</a></div></div>
+                    <div class="info-row"><span class="time">晚上</span><div>免稅店 ➔ 螃蟹+涮涮鍋吃到飽 (¥4500)</div></div>
                 </div>
             </div>
 
-            <div class="card border-orange-500">
-                <div class="flex items-center justify-between mb-3"><span class="day-badge">Day 4</span> <span class="text-sm font-bold text-gray-500">5/4 (一)</span></div>
-                <div class="space-y-4 text-sm">
-                    <div class="flex"><span class="time-label">上午</span><div>上高地河童橋、大正池漫步<br><a href="https://maps.app.goo.gl/上高地" class="map-btn mt-1"><i class="fa-solid fa-location-dot"></i> 地圖</a></div></div>
-                    <div class="flex"><span class="time-label">14:00</span><div>飛驒高山三之町古街散策</div></div>
-                    <div class="flex"><span class="time-label">16:30</span><div>白川鄉合掌村 (童話村落)<br><a href="https://maps.app.goo.gl/合掌村" class="map-btn mt-1"><i class="fa-solid fa-location-dot"></i> 地圖</a></div></div>
+            <div class="card">
+                <div class="day-header">
+                    <span class="font-bold text-blue-800">Day 6 | 5/6 (三)</span>
+                    <span class="text-xs text-gray-500">大阪 ✈ 桃園</span>
                 </div>
-            </div>
-
-            <div class="card border-purple-500">
-                <div class="flex items-center justify-between mb-3"><span class="day-badge">Day 5</span> <span class="text-sm font-bold text-gray-500">5/5 (二)</span></div>
-                <div class="space-y-4 text-sm text-gray-700">
-                    <div class="flex"><span class="time-label">09:00</span><div>郡上八幡城下町 (吃三品甜點)</div></div>
-                    <div class="flex"><span class="time-label">下午</span><div>宇治平等院 (紫藤花盛開期)<br><a href="https://maps.app.goo.gl/宇治平等院" class="map-btn mt-1"><i class="fa-solid fa-location-dot"></i> 地圖</a></div></div>
-                    <div class="flex"><span class="time-label">18:30</span><div>晚餐：涮涮鍋+螃蟹吃到飽 (¥4500)</div></div>
-                </div>
-            </div>
-
-            <div class="card border-pink-500">
-                <div class="flex items-center justify-between mb-3"><span class="day-badge">Day 6</span> <span class="text-sm font-bold text-gray-500">5/6 (三)</span></div>
-                <div class="space-y-4 text-sm text-gray-700">
-                    <div class="flex"><span class="time-label">上午</span><div>心齋橋、難波自由購、機場超市</div></div>
-                    <div class="flex"><span class="time-label">13:25</span><div>✈️ JX821 關西起飛 ➔ 15:20 桃園</div></div>
+                <div class="p-2 text-sm">
+                    <div class="info-row"><span class="time">上午</span><div>心齋橋、難波自由活動</div></div>
+                    <div class="info-row"><span class="time">13:25</span><div>JX821 關西起飛</div></div>
+                    <div class="info-row"><span class="time">15:20</span><div>返抵桃園國際機場</div></div>
                 </div>
             </div>
         </section>
 
-        <section id="hotel" class="tab-content">
-            <h2 class="text-lg font-bold mb-4 ml-2 italic text-blue-800">Hotels 飯店資訊</h2>
-            <div class="grid gap-3">
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-sm">
-                    <p class="font-bold text-blue-600">D1: 京都二條飯店 La'gent</p>
-                    <p class="text-gray-400 text-xs">TEL: 075-823-6655</p>
-                    <a href="https://maps.app.goo.gl/HotelNijo" class="map-btn mt-2">點此導航</a>
+        <section id="hotels" class="tab-content">
+            <h2 class="font-bold text-gray-700 mb-4 px-2">住宿飯店清單</h2>
+            <div class="space-y-3">
+                <div class="bg-white p-4 rounded-xl shadow-sm">
+                    <div class="text-xs text-blue-500 font-bold mb-1">D1 京都</div>
+                    <p class="font-bold">La'gent Hotel Kyoto Nijo</p>
+                    <p class="text-sm text-gray-500">075-823-6655</p>
                 </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-sm">
-                    <p class="font-bold text-blue-600">D2: 金澤片町 MYSTAYS</p>
-                    <p class="text-gray-400 text-xs">TEL: 076-263-0011</p>
-                    <a href="https://maps.app.goo.gl/Kanazawa" class="map-btn mt-2">點此導航</a>
+                <div class="bg-white p-4 rounded-xl shadow-sm">
+                    <div class="text-xs text-blue-500 font-bold mb-1">D2 金澤</div>
+                    <p class="font-bold">HOTEL MYSTAYS Kanazawa Katamachi</p>
+                    <p class="text-sm text-gray-500">076-263-0011</p>
                 </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-sm">
-                    <p class="font-bold text-blue-600">D3: 白馬丸金溫泉旅館</p>
-                    <p class="text-gray-400 text-xs">TEL: 0261-72-2114</p>
-                    <a href="https://maps.app.goo.gl/Hakuba" class="map-btn mt-2">點此導航</a>
+                <div class="bg-white p-4 rounded-xl shadow-sm">
+                    <div class="text-xs text-blue-500 font-bold mb-1">D3 白馬</div>
+                    <p class="font-bold">白馬丸金旅館 (Hakuba Happou)</p>
+                    <p class="text-sm text-gray-500">+81 261-72-2114</p>
                 </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-sm">
-                    <p class="font-bold text-blue-600">D4: 吳竹莊高山站前飯店</p>
-                    <p class="text-gray-400 text-xs">TEL: 0577-33-7111</p>
-                    <a href="https://maps.app.goo.gl/Takayama" class="map-btn mt-2">點此導航</a>
+                <div class="bg-white p-4 rounded-xl shadow-sm">
+                    <div class="text-xs text-blue-500 font-bold mb-1">D4 高山</div>
+                    <p class="font-bold">吳竹莊高山站前飯店</p>
+                    <p class="text-sm text-gray-500">0577-33-7111</p>
                 </div>
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-sm">
-                    <p class="font-bold text-blue-600">D5: 心齋橋格蘭多飯店</p>
-                    <p class="text-gray-400 text-xs">TEL: 06-6213-5800</p>
-                    <a href="https://maps.app.goo.gl/OsakaHotel" class="map-btn mt-2">點此導航</a>
+                <div class="bg-white p-4 rounded-xl shadow-sm">
+                    <div class="text-xs text-blue-500 font-bold mb-1">D5 大阪</div>
+                    <p class="font-bold">心齋橋格蘭多飯店</p>
+                    <p class="text-sm text-gray-500">06-6213-5800</p>
                 </div>
             </div>
         </section>
 
-        <section id="budget" class="tab-content">
-            <h2 class="text-lg font-bold mb-4 ml-2 text-blue-800">零用金預估 (每人)</h2>
-            <div class="bg-white p-5 rounded-xl shadow-sm text-sm leading-loose text-gray-600">
-                <p>📍 <b>餐飲自費預計：</b> ¥15,000</p>
-                <p>📍 <b>景點零食/門票：</b> ¥10,000</p>
-                <p>📍 <b>基礎購物金額：</b> ¥35,000</p>
-                <hr class="my-3">
-                <p class="text-blue-700 font-bold text-center text-lg">💰 建議準備：¥60,000 以上</p>
-                <p class="text-[10px] text-gray-400 text-center mt-2">(僅供參考，實際依個人消費習慣而定)</p>
+        <section id="prep" class="tab-content">
+            <div class="bg-white p-5 rounded-xl shadow-sm">
+                <h3 class="font-bold text-red-600 mb-3 underline">⚠️ 立山黑部裝備建議</h3>
+                <ul class="list-disc list-inside text-sm space-y-2 text-gray-700">
+                    <li><b>太陽眼鏡：</b> 雪地反光極強，必帶。</li>
+                    <li><b>洋蔥式穿法：</b> 山下溫暖山頂寒冷 (約0度)。</li>
+                    <li><b>防滑鞋：</b> 走雪之大谷時防滑。</li>
+                    <li><b>行動電源：</b> 低溫下手機噴電極快。</li>
+                </ul>
+                <hr class="my-4">
+                <h3 class="font-bold text-gray-800 mb-3">小費參考</h3>
+                <p class="text-sm text-gray-600">導遊司機小費：NTD 300 / 每天每人</p>
             </div>
         </section>
     </main>
 
-    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-3 flex justify-around shadow-lg z-50">
-        <button onclick="showTab('itinerary')" class="nav-item flex flex-col items-center text-blue-600" id="nav-itinerary">
-            <i class="fa-solid fa-map-location-dot"></i><span class="text-[10px] mt-1">行程表</span>
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-3 shadow-lg z-50">
+        <button onclick="switchTab('itinerary')" class="nav-item active flex flex-col items-center" id="btn-itinerary">
+            <i class="fa-solid fa-calendar-day"></i><span class="text-[10px] mt-1">詳細行程</span>
         </button>
-        <button onclick="showTab('hotel')" class="nav-item flex flex-col items-center text-gray-400" id="nav-hotel">
-            <i class="fa-solid fa-bed"></i><span class="text-[10px] mt-1">住哪裡</span>
+        <button onclick="switchTab('hotels')" class="nav-item flex flex-col items-center text-gray-400" id="btn-hotels">
+            <i class="fa-solid fa-hotel"></i><span class="text-[10px] mt-1">住宿資訊</span>
         </button>
-        <button onclick="showTab('budget')" class="nav-item flex flex-col items-center text-gray-400" id="nav-budget">
-            <i class="fa-solid fa-coins"></i><span class="text-[10px] mt-1">換匯參考</span>
+        <button onclick="switchTab('prep')" class="nav-item flex flex-col items-center text-gray-400" id="btn-prep">
+            <i class="fa-solid fa-suitcase"></i><span class="text-[10px] mt-1">行前準備</span>
         </button>
     </nav>
 
     <script>
-        function showTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(nav => {
-                nav.classList.remove('text-blue-600');
-                nav.classList.add('text-gray-400');
+        function switchTab(id) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => {
+                n.classList.remove('text-blue-600', 'active');
+                n.classList.add('text-gray-400');
             });
-            document.getElementById(tabId).classList.add('active');
-            document.getElementById('nav-' + tabId).classList.add('text-blue-600');
-            document.getElementById('nav-' + tabId).classList.remove('text-gray-400');
+            document.getElementById(id).classList.add('active');
+            const activeBtn = document.getElementById('btn-' + id);
+            activeBtn.classList.add('text-blue-600', 'active');
+            activeBtn.classList.remove('text-gray-400');
             window.scrollTo(0,0);
         }
     </script>
