@@ -1,393 +1,296 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>日本立山黑部6日旅遊 App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>立山黑部6日｜手繪旅行筆記V4</title>
 
 <style>
-/* ===== 手繪風格 UI ===== */
-body{
-  margin:0;
-  font-family:"Arial","Noto Sans TC";
-  background:#f7f3ea;
-  color:#2b2b2b;
+/* =========================
+   🎨 手繪筆記風格系統 V4
+========================= */
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Noto Sans TC", cursive, sans-serif;
+  background: #f4f1e8;
+  background-image: linear-gradient(#e9e2d0 1px, transparent 1px);
+  background-size: 100% 28px;
+  color: #2b2b2b;
 }
 
-.header{
-  padding:16px;
-  background:#fff;
-  border-bottom:2px dashed #aaa;
-  text-align:center;
-  font-weight:bold;
+header {
+  background: #fff3cd;
+  border-bottom: 3px dashed #333;
+  padding: 15px;
+  text-align: center;
 }
 
-.sub{
-  font-size:12px;
-  color:#666;
+header h1 { font-size: 18px; margin: 0; font-weight: 800; }
+header p { font-size: 12px; margin: 5px 0 0; color: #666; }
+
+/* 導航標籤 */
+nav {
+  display: flex;
+  overflow-x: auto;
+  background: #fff;
+  border-bottom: 2px dashed #444;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* ===== 按鈕列 ===== */
-.tabs{
-  display:flex;
-  overflow-x:auto;
-  background:#fff;
-  border-bottom:1px solid #ddd;
+nav button {
+  flex: none;
+  width: 80px;
+  padding: 12px 5px;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
 }
 
-.tab{
-  flex:1;
-  padding:12px;
-  min-width:90px;
-  text-align:center;
-  cursor:pointer;
-  border-right:1px dashed #ddd;
-  font-weight:bold;
+nav button.active {
+  background: #ffe7a3;
+  border-bottom: 4px solid #ff6b6b;
+  color: #d63031;
 }
 
-.tab.active{
-  background:#ffe9a8;
+.container { padding: 12px; padding-bottom: 60px; }
+
+/* 手繪卡片 */
+.card {
+  background: #fffdf7;
+  border: 2px dashed #444;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 3px 3px 0 #c9c1a6;
 }
 
-/* ===== 卡片 ===== */
-.card{
-  background:white;
-  margin:12px;
-  padding:14px;
-  border-radius:12px;
-  box-shadow:3px 3px 0 #ddd;
-  border:1px solid #eee;
+/* 標題與標籤 */
+.title {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  border-left: 6px solid #ff6b6b;
+  padding-left: 10px;
+  display: block;
 }
 
-/* ===== timeline ===== */
-.timeline{
-  border-left:3px dashed #aaa;
-  margin-left:10px;
-  padding-left:15px;
+.sticker {
+  display: inline-block;
+  background: #ffd6a5;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  transform: rotate(-1.5deg);
+  margin-right: 5px;
+  font-weight: bold;
 }
 
-.event{
-  margin-bottom:14px;
+/* ✈️ 電子機票樣式優化 */
+.ticket {
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 8px;
+  margin: 10px 0;
+  position: relative;
+}
+.ticket::before, .ticket::after {
+  content: ''; position: absolute; top: 50%; width: 20px; height: 20px; 
+  background: #f4f1e8; border: 2px solid #333; border-radius: 50%;
+}
+.ticket::before { left: -12px; transform: translateY(-50%); }
+.ticket::after { right: -12px; transform: translateY(-50%); }
+
+.ticket-top {
+  padding: 10px; border-bottom: 2px dashed #333;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.ticket-mid {
+  padding: 15px; display: flex; justify-content: space-around; align-items: center;
+}
+.ticket-dest { text-align: center; }
+.ticket-dest big { font-size: 24px; font-weight: 900; color: #2d3561; display: block; }
+.ticket-dest span { font-size: 10px; color: #777; }
+
+/* 住宿強調 */
+.hotel-info {
+  background: #fdf6e3;
+  border: 1px solid #d4a373;
+  padding: 10px;
+  font-size: 13px;
+  border-radius: 5px;
 }
 
-.time{
-  font-weight:bold;
-  color:#d35400;
+/* 時間軸與清單 */
+.timeline { border-left: 2px dashed #888; padding-left: 15px; margin-left: 10px; }
+.item { margin-bottom: 10px; font-size: 14px; position: relative; }
+.item::before { content: "📍"; position: absolute; left: -25px; }
+
+.transport-list {
+  background: #eaf4ff;
+  border: 1.5px dashed #3498db;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
 }
 
-/* ===== 交通強調 ===== */
-.transport{
-  background:#e8f4ff;
-  border-left:4px solid #3498db;
-  padding:8px;
-  margin:6px 0;
-}
+.page { display: none; }
+.page.active { display: block; }
 
-/* ===== checklist ===== */
-.checklist{
-  background:#fff;
-  margin:12px;
-  padding:12px;
-  border-radius:12px;
-}
-
-.checkitem{
-  display:flex;
-  align-items:center;
-  margin:6px 0;
-}
-
-.checkitem input{
-  margin-right:10px;
-}
-
-/* ===== bottom nav ===== */
-.bottom{
-  position:fixed;
-  bottom:0;
-  width:100%;
-  display:flex;
-  background:#fff;
-  border-top:1px solid #ccc;
-}
-
-.bottom div{
-  flex:1;
-  text-align:center;
-  padding:10px;
-  font-size:12px;
-}
-
-.small{
-  font-size:12px;
-  color:#777;
-}
-
-/* ===== funny mode ===== */
-.fun{
-  font-style:italic;
-  color:#8e44ad;
-}
-
+.footer-info { font-size: 11px; color: #888; text-align: center; margin-top: 20px; }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-✈️ 立山黑部 × 紫藤 6日旅遊 App
-<div class="sub">Level 3+4 幽默模式已啟動（導遊：請不要走失）</div>
+<header>
+  <h1>✈️ 紫藤 x 立山黑部 6日手繪筆記</h1>
+  <p>團號：OSA06JX260501UA | 導遊：吳淑華</p>
+</header>
+
+<nav id="topNav">
+  <button onclick="show('info', this)" class="active">重要資訊</button>
+  <button onclick="show('d1', this)">Day 1</button>
+  <button onclick="show('d2', this)">Day 2</button>
+  <button onclick="show('d3', this)">Day 3</button>
+  <button onclick="show('d4', this)">Day 4</button>
+  <button onclick="show('d5', this)">Day 5</button>
+  <button onclick="show('d6', this)">Day 6</button>
+</nav>
+
+<div class="container">
+
+  <div id="info" class="page active">
+    <div class="card">
+      <div class="sticker">集合資訊</div>
+      <div class="item"><b>時間：</b>115年5月1日 07:45 AM</div>
+      <div class="item"><b>地點：</b>桃園機場一航 星宇 6號櫃台</div>
+      <div class="item"><b>送機人員：</b>小周 0933-729400</div>
+      <div class="item"><b>導遊電話：</b>0916-850180</div>
+    </div>
+
+    <div class="card">
+      <div class="sticker">電子機票 (去程)</div>
+      <div class="ticket">
+        <div class="ticket-top">
+          <span>STARLUX JX822</span>
+          <span>2026/05/01</span>
+        </div>
+        <div class="ticket-mid">
+          <div class="ticket-dest"><big>TPE</big><span>10:15 桃園</span></div>
+          <div style="font-size:20px">✈️</div>
+          <div class="ticket-dest"><big>KIX</big><span>14:00 大阪</span></div>
+        </div>
+      </div>
+      <div class="sticker">電子機票 (回程)</div>
+      <div class="ticket">
+        <div class="ticket-top">
+          <span>STARLUX JX821</span>
+          <span>2026/05/06</span>
+        </div>
+        <div class="ticket-mid">
+          <div class="ticket-dest"><big>KIX</big><span>13:25 大阪</span></div>
+          <div style="font-size:20px">✈️</div>
+          <div class="ticket-dest"><big>TPE</big><span>15:20 桃園</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="d1" class="page">
+    <div class="card">
+      <span class="title">第一天：啟程關西</span>
+      <div class="timeline">
+        <div class="item"><b>伏見稻荷大社：</b>千本鳥居巡禮。</div>
+        <div class="item"><b>京都散策：</b>四條河原町自由逛街。</div>
+      </div>
+      <div class="hotel-info">🏨 住宿：La’gent 京都二條飯店 (075-823-6655)</div>
+    </div>
+  </div>
+
+  <div id="d2" class="page">
+    <div class="card">
+      <span class="title">第二天：名園與斷崖</span>
+      <div class="timeline">
+        <div class="item"><b>舊竹林院：</b>池泉回遊式庭園。</div>
+        <div class="item"><b>東尋坊：</b>世界級柱狀岩絕壁。</div>
+        <div class="item"><b>兼六園：</b>日本三大名園之首。</div>
+      </div>
+      <div class="hotel-info">🏨 住宿：MYSTAYS 金澤片町飯店 (076-263-0011)</div>
+    </div>
+  </div>
+
+  <div id="d3" class="page">
+    <div class="card">
+      <span class="title">第三天：立山黑部阿爾卑斯</span>
+      <div class="sticker">橫斷 6 大工具</div>
+      <div class="transport-list">
+        1. 立山站 ➔ 美女平【纜車】<br>
+        2. 美女平 ➔ 室堂【高原巴士】(雪之大谷)<br>
+        3. 室堂 ➔ 大觀峰【隧道電氣巴士】<br>
+        4. 大觀峰 ➔ 黑部平【空中索道】<br>
+        5. 黑部平 ➔ 黑部湖【地下電車】<br>
+        6. 黑部水壩 ➔ 扇澤【電氣巴士】
+      </div>
+      <div style="margin-top:10px;" class="hotel-info">🏨 住宿：白馬丸金旅館 (0261-72-2114)</div>
+    </div>
+  </div>
+
+  <div id="d4" class="page">
+    <div class="card">
+      <span class="title">第四天：秘境與童話村</span>
+      <div class="timeline">
+        <div class="item"><b>上高地：</b>大正池、河童橋散策。</div>
+        <div class="item"><b>高山老街：</b>上三之町小京都。</div>
+        <div class="item"><b>白川鄉合掌村：</b>世界文化遺產。</div>
+      </div>
+      <div class="hotel-info">🏨 住宿：吳竹莊高山站前飯店 (0577-33-7111)</div>
+    </div>
+  </div>
+
+  <div id="d5" class="page">
+    <div class="card">
+      <span class="title">第五天：紫藤之戀</span>
+      <div class="timeline">
+        <div class="item"><b>郡上八幡：</b>贈送邊走邊吃三品。</div>
+        <div class="item"><b>宇治平等院：</b>鳳凰堂與紫藤花。</div>
+        <div class="item"><b>螃蟹饗宴：</b>加碼螃蟹吃到飽。</div>
+      </div>
+      <div class="hotel-info">🏨 住宿：心齋橋格蘭多飯店 (06-6213-5800)</div>
+    </div>
+  </div>
+
+  <div id="d6" class="page">
+    <div class="card">
+      <span class="title">第六天：血拚與回航</span>
+      <div class="timeline">
+        <div class="item"><b>自由活動：</b>道頓堀、心齋橋、梅田。</div>
+        <div class="item"><b>關西空港：</b>機場商店街最後採買。</div>
+      </div>
+      <div class="hotel-info">🏨 住宿：溫暖的家</div>
+    </div>
+  </div>
+
 </div>
 
-<!-- Tabs -->
-<div class="tabs">
-  <div class="tab active" onclick="showDay(1)">Day1</div>
-  <div class="tab" onclick="showDay(2)">Day2</div>
-  <div class="tab" onclick="showDay(3)">Day3</div>
-  <div class="tab" onclick="showDay(4)">Day4</div>
-  <div class="tab" onclick="showDay(5)">Day5</div>
-  <div class="tab" onclick="showDay(6)">Day6</div>
-</div>
-
-<!-- CONTENT -->
-<div id="content"></div>
-
-<!-- CHECKLIST -->
-<div class="checklist">
-  <h3>🧳 出發前 CheckList</h3>
-  <div class="checkitem"><input type="checkbox">護照（有效期6個月以上）</div>
-  <div class="checkitem"><input type="checkbox">SIM卡 / 網路</div>
-  <div class="checkitem"><input type="checkbox">轉接頭</div>
-  <div class="checkitem"><input type="checkbox">日幣現金</div>
-  <div class="checkitem"><input type="checkbox">外套（黑部會冷到懷疑人生）</div>
-</div>
-
-<div class="checklist">
-  <h3>🧳 回國前 CheckList</h3>
-  <div class="checkitem"><input type="checkbox">護照收好（不要放飯店抽屜）</div>
-  <div class="checkitem"><input type="checkbox">行李重量確認</div>
-  <div class="checkitem"><input type="checkbox">免稅商品打包</div>
-  <div class="checkitem"><input type="checkbox">手機充電器</div>
-  <div class="checkitem"><input type="checkbox">確認沒有被丟包（重要）</div>
-</div>
-
-<!-- bottom -->
-<div class="bottom">
-  <div>🏠行程</div>
-  <div>🚌交通</div>
-  <div>📍地圖</div>
-  <div>🧳Check</div>
-</div>
+<div class="footer-info">© 2024 HSI HUNG TRAVEL - 祝您旅途愉快</div>
 
 <script>
-
-const data = {
-1: `
-<div class="card">
-<h2>Day1｜台北 → 大阪 → 京都</h2>
-
-<div class="timeline">
-
-<div class="event">
-<div class="time">07:45</div>
-<div class="transport">✈️ 桃園機場集合（星宇6號櫃台）</div>
-<div class="fun">導遊開始點名，失蹤者將被列入「自由行升級版」</div>
-</div>
-
-<div class="event">
-<div class="time">10:15</div>
-<div class="transport">✈️ JX822 起飛</div>
-</div>
-
-<div class="event">
-<div class="time">14:00</div>
-<div class="transport">🛬 抵達關西空港</div>
-</div>
-
-<div class="event">
-<div class="time">16:30</div>
-<div class="transport">🚌 前往伏見稻荷大社</div>
-</div>
-
-<div class="event">
-<div class="time">17:30-20:00</div>
-<div>⛩️ 千本鳥居（拍照地獄模式開啟）</div>
-<div class="fun">拍到最後會開始懷疑自己是不是在無限迴圈</div>
-</div>
-
-</div>
-</div>
-`,
-
-2: `
-<div class="card">
-<h2>Day2｜金澤路線</h2>
-
-<div class="timeline">
-
-<div class="event">
-<div class="time">07:30</div>
-<div class="transport">🚌 京都 → 滋賀舊竹林院</div>
-</div>
-
-<div class="event">
-<div class="time">10:00</div>
-<div>🌿 舊竹林院庭園（靜到可以聽見自己思考人生）</div>
-</div>
-
-<div class="event">
-<div class="time">13:00</div>
-<div class="transport">🚌 前往東尋坊</div>
-</div>
-
-<div class="event">
-<div class="time">14:00</div>
-<div>🌊 東尋坊懸崖（風大到懷疑安全帶人生）</div>
-</div>
-
-<div class="event">
-<div class="time">17:00</div>
-<div class="transport">🚌 金澤兼六園</div>
-</div>
-
-</div>
-</div>
-`,
-
-3: `
-<div class="card">
-<h2>Day3｜立山黑部主線任務</h2>
-
-<div class="fun">⚠️ 本日難度：登山RPG模式</div>
-
-<div class="timeline">
-
-<div class="event">
-<div class="time">08:00</div>
-<div class="transport">🚡 立山登山系統開始</div>
-</div>
-
-<div class="event">
-<div class="time">09:00-15:00</div>
-<div class="transport">🚠 纜車 + 巴士 + 地下電車 + 空中纜車</div>
-<div class="fun">你會懷疑自己是不是在玩交通模擬器</div>
-</div>
-
-<div class="event">
-<div class="time">12:00</div>
-<div>❄️ 雪之大谷（如果沒被融掉的話）</div>
-</div>
-
-<div class="event">
-<div class="time">15:30</div>
-<div>🏔 黑部水壩（工程師的天堂）</div>
-</div>
-
-</div>
-</div>
-`,
-
-4: `
-<div class="card">
-<h2>Day4｜上高地 + 合掌村</h2>
-
-<div class="timeline">
-
-<div class="event">
-<div class="time">08:00</div>
-<div class="transport">🚌 前往上高地</div>
-</div>
-
-<div class="event">
-<div class="time">10:00</div>
-<div>🌿 河童橋（風景美到會自動安靜）</div>
-</div>
-
-<div class="event">
-<div class="time">13:00</div>
-<div class="transport">🚌 高山老街</div>
-</div>
-
-<div class="event">
-<div class="time">16:00</div>
-<div>🏠 白川鄉合掌村</div>
-</div>
-
-</div>
-</div>
-`,
-
-5: `
-<div class="card">
-<h2>Day5｜宇治 + 京都文化</h2>
-
-<div class="timeline">
-
-<div class="event">
-<div class="time">09:00</div>
-<div class="transport">🚌 郡上八幡</div>
-</div>
-
-<div class="event">
-<div class="time">12:00</div>
-<div>🍡 邊走邊吃（官方認證肥胖行程）</div>
-</div>
-
-<div class="event">
-<div class="time">14:00</div>
-<div class="transport">🚌 宇治平等院</div>
-</div>
-
-<div class="event">
-<div class="time">16:00</div>
-<div>🍵 抹茶宇宙覺醒</div>
-</div>
-
-</div>
-</div>
-`,
-
-6: `
-<div class="card">
-<h2>Day6｜大阪 → 回國</h2>
-
-<div class="timeline">
-
-<div class="event">
-<div class="time">08:00</div>
-<div>🛍 心齋橋自由活動（刷卡地獄）</div>
-</div>
-
-<div class="event">
-<div class="time">11:00</div>
-<div class="transport">🚌 前往機場</div>
-</div>
-
-<div class="event">
-<div class="time">13:25</div>
-<div class="transport">✈️ JX821 回台灣</div>
-</div>
-
-<div class="event">
-<div class="time">15:20</div>
-<div>🏠 抵達台灣（現實模式啟動）</div>
-</div>
-
-</div>
-</div>
-`
-};
-
-function showDay(d){
-  document.getElementById("content").innerHTML = data[d];
-
-  document.querySelectorAll(".tab").forEach((t,i)=>{
-    t.classList.remove("active");
-  });
-  document.querySelectorAll(".tab")[d-1].classList.add("active");
+function show(id, btn) {
+  // 切換頁面
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  
+  // 切換按鈕樣式
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  // 自動捲動導航列 (確保選中的標籤可見)
+  btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 }
-
-showDay(1);
 </script>
 
 </body>
