@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>立山黑部6日｜手繪旅行筆記V4.6</title>
+<title>立山黑部6日｜手繪旅行筆記V4.7</title>
 <style>
 /* =========================
    🎨 手繪筆記風格系統
@@ -85,7 +85,7 @@ nav button.active {
   font-weight: bold;
 }
 
-/* 🍴 飲食樣式 (含預算) */
+/* 🍴 飲食樣式 (修正為靠左對齊) */
 .meal-box {
   background: #f0f9eb;
   border: 1px solid #c2e7b0;
@@ -94,9 +94,14 @@ nav button.active {
   margin-top: 10px;
   font-size: 13px;
 }
-.meal-item { margin: 4px 0; display: flex; justify-content: space-between; }
-.meal-label { color: #67c23a; font-weight: bold; margin-right: 8px; }
-.meal-price { color: #e67e22; font-weight: bold; }
+.meal-item { 
+  margin: 4px 0; 
+  display: flex; 
+  justify-content: flex-start; /* 👈 這裡改為靠左對齊 */
+  align-items: center;
+}
+.meal-label { color: #67c23a; font-weight: bold; margin-right: 12px; min-width: 20px; }
+.meal-price { color: #e67e22; font-weight: bold; margin-left: 10px; }
 
 /* ✈️ 電子機票 */
 .ticket {
@@ -126,6 +131,10 @@ nav button.active {
 .page { display: none; }
 .page.active { display: block; }
 .footer-info { font-size: 11px; color: #888; text-align: center; margin-top: 20px; }
+
+/* 勾選清單樣式 */
+.check { display: flex; align-items: flex-start; margin: 8px 0; font-size: 13px; line-height: 1.4; }
+.check input { margin-top: 3px; margin-right: 8px; }
 </style>
 </head>
 <body>
@@ -276,7 +285,7 @@ nav button.active {
       <div class="meal-box">
         <div class="meal-item"><span class="meal-label">早</span><span>飯店內用</span></div>
         <div class="meal-item"><span class="meal-label">午</span><span>機上餐食</span></div>
-        <div class="meal-item"><span class="meal-label">晚</span><span>溫暖的家</span></div>
+        <div class="meal-item"><span class="meal-label">晚</span><span>溫塊的家</span></div>
       </div>
       <div class="hotel-info">🏨 溫暖的家</div>
     </div>
@@ -286,7 +295,7 @@ nav button.active {
     <div class="checklist">
       <h2>🧳 旅行檢查清單</h2>
       <div class="card">
-      <div class="sticker">必備物品</div>
+        <div class="sticker">必備物品</div>
         <label class="check"><input type="checkbox"> 護照 (效期6個月)</label>
         <label class="check"><input type="checkbox"> 日幣現金 / 信用卡</label>
         <label class="check"><input type="checkbox"> 行動電源(絕緣膠帶貼孔，放置於夾鏈袋，每顆行動電源不大於20,000mAH最多兩顆) (不可托運)</label>
@@ -295,7 +304,7 @@ nav button.active {
         <div class="sticker">立山特別準備</div>
         <label class="check"><input type="checkbox"> 太陽眼鏡 (防雪盲)</label>
         <label class="check"><input type="checkbox"> 防風保暖外套/毛帽/手套</label>
-        <label class="check"><input type="checkbox"> 止滑防水鞋(雪爪)</label
+        <label class="check"><input type="checkbox"> 止滑防水鞋(雪爪)</label>
       </div>
     </div>
   </div>
